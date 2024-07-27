@@ -4,6 +4,7 @@ var mysql = require('mysql');
 var bodyParser = require('body-parser');
 const { render } = require('ejs');
 var port = process.env.PORT || 3000;
+require('dotenv').config();
 
 if (typeof localStorage === "undefined" || localStorage === null) {
     var LocalStorage = require('node-localstorage').LocalStorage;
@@ -14,10 +15,10 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: false }))
 
 var con = mysql.createConnection({
-    database: 'todo',
-    host: 'localhost',
-    user: 'root',
-    password: ''
+    database: process.env.DB,
+    host: process.env.HOST,
+    user: process.env.USER,
+    password: process.env.PASSWORD
 });
 
 con.connect();
