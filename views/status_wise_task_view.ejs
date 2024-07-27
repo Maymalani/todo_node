@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Status Wise Task View</title>
+</head>
+
+<body>
+    <h1>
+        <%=status%> Task
+    </h1>
+    <table border="" cellspacing="0" cellpadding="10">
+        <%if(result.length> 0){%>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Task</th>
+                <th>Task Status</th>
+            </tr>
+            <%result.forEach(function(sts){%>
+                <tr>
+                    <td><%=sts.id%></td>
+                    <td><%=sts.staff_name%></td>
+                    <td><%=sts.task%></td>
+                    <td><%=sts.task_status%></td>
+                </tr>
+                <%})%>
+                    <%}else{%>
+                        No <%=status%> Task Available.
+                    <%}%>
+    </table>
+</body>
+
+</html>

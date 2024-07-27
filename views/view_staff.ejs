@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Staff</title>
+</head>
+<body>
+    <h1>View Staff</h1>
+    <table border="" cellspacing="0" cellpadding="10">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Status</th>
+        </tr>
+        <%result.forEach(function(stf){%>
+            <tr>
+                <td><%=stf.id%></td>
+                <td><%=stf.staff_name%></td>
+                <td><%=stf.staff_email%></td>
+                <td><%=stf.staff_password%></td>
+                <td>
+                    <%if(stf.status == 0){%>
+                        De-Active
+                    <%}else{%>
+                        Active
+                    <%}%>
+                </td>
+            </tr>
+        <%})%>
+    </table>
+</body>
+</html>

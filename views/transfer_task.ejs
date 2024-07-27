@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transfer Task</title>
+</head>
+
+<body>
+    <h1>Transfer Task</h1>
+    <form method="post">
+        <table>
+            <tr>
+                <td>Select Staff : </td>
+                <td>
+                    <select name="trans_staff" id="">
+                        <option selected disabled>Select Staff</option>
+                        <%result.forEach(function(stf){%>
+                            <option value="<%=stf.staff_name%>">
+                                <%=stf.staff_name%>
+                            </option>
+                            <%})%>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Task Completion Date : </td>
+                <td><input type="date" name="task_date"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Transfer Task"></td>
+            </tr>
+        </table>
+    </form>
+
+</body>
+
+</html>

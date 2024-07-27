@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Task Status</title>
+    <style>
+        a{
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Update Task Status</h1>
+    <%if(result.length > 0){%>
+        <table border="" cellspacing="0" cellpadding="10">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Task</th>
+                <th>Task Completion Date</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+            <%result.forEach(function(stf){%>
+                <tr>
+                    <td><%=stf.id%></td>
+                    <td><%=stf.staff_name%></td>
+                    <td><%=stf.task%></td>
+                    <td><%=stf.task_date%></td>
+                    <td><%=stf.task_status%></td>
+                    <td>
+                        <button><a href="/update/<%=stf.id%>/pending">Pending</a></button>&nbsp;
+                        <button><a href="/update/<%=stf.id%>/working">Working</a></button>&nbsp;
+                        <button><a href="/update/<%=stf.id%>/completed">Completed</a></button>&nbsp;
+                        <button><a href="/update/<%=stf.id%>/declined">Declined</a></button></td>
+                </tr>
+            <%})%>
+        </table>
+        <%}else{%>
+            <p>No Task Available For Update Status</p>
+            <%}%>
+    
+</body>
+</html>

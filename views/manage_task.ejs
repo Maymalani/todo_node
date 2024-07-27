@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Task</title>
+    <style>
+        a{
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Manage Task</h1>
+    <table border="" cellpadding="10" cellspacing="0">
+        <tr>
+            <th>Id</th>
+            <th>Staff Name</th>
+            <th>Staff Task</th>
+            <th>Task Status</th>
+            <th>Action</th>
+        </tr>
+        <%result.forEach(function(tsk){%>
+            <tr>
+                <th><%=tsk.id%></th>
+                <th><%=tsk.staff_name%></th>
+                <th><%=tsk.task%></th>
+                <th><%=tsk.task_status%></th>
+                <th><button><a href="/transfer_task/<%=tsk.staff_name%>/<%=tsk.id%>/<%=tsk.task%>">Transfer Task</a></button></th>
+            </tr>
+        <%})%>
+    </table>
+</body>
+
+</html>

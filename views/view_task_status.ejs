@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>View Task Status</title>
+</head>
+<body>
+    <h1>View Task Status</h1>
+    <table border="" cellspacing="0" cellpadding="10">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Task</th>
+            <th>Task Complete Date</th>
+            <th>Task Status</th>
+        </tr>
+        <%result.forEach(function(stf){%>
+            <tr>
+                <td><%=stf.id%></td>
+                <td><%=stf.staff_name%></td>
+                <td><%=stf.task%></td>
+                <td><%=stf.task_date%></td>
+                <td><%=stf.task_status%></td>
+            </tr>
+        <%})%>
+    </table>
+</body>
+</html>
